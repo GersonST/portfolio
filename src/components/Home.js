@@ -1,5 +1,7 @@
 import React from "react";
-import image from "../background2.jpg";
+import image from "../assets/background2.jpg";
+import Project from "../components/Project";
+import About from "../components/About";
 
 export default function Home() {
   return (
@@ -14,6 +16,8 @@ export default function Home() {
           Hello World! I'm Gerson
         </h1>
       </section>
+      <Project />
+      <About />
     </main>
   );
 }

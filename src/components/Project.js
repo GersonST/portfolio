@@ -11,6 +11,13 @@ export default function Project() {
           title,
           date,
           place,
+          mainImage{
+            asset->{
+              _id,
+              url
+            },
+            alt
+          },
           description,
           projectType,
           link,
@@ -43,18 +50,14 @@ export default function Project() {
                   </a>
                 </h3>
                 <div className="text-gray-500 text-xs space-x-4">
-                  <span>
-                    <strong className="font-bold">Fineshed on</strong>:{" "}
-                    {new Date(project.date).toLocaleDateString()}
+                  <span className="block h-80 relative rounded py-2 px-1 my-10">
+                    <img
+                      src={project.mainImage.asset.url}
+                      alt={project.mainImage.alt}
+                      className="w-full h-full rounded-r object-cover absolute"
+                    />
                   </span>
-                  <span>
-                    <strong className="font-bold">Company</strong>:{" "}
-                    {project.place}
-                  </span>
-                  <span>
-                    <strong className="font-bold">Type</strong>:{" "}
-                    {project.projectType}
-                  </span>
+
                   <p className="my-6 text-lg text-gray-700 leading-relaxed">
                     {project.description}
                   </p>
